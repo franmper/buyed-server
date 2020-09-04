@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_items_items",
+  "info": {
+    "name": "items",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cost": {
+      "type": "float"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "brand": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

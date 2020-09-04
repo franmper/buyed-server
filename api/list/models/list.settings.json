@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lists",
+  "info": {
+    "name": "list"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 250
+    },
+    "buyedAt": {
+      "type": "date"
+    },
+    "buyedIn": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Listado",
+        "Comprado"
+      ],
+      "default": "Listado",
+      "required": true
+    },
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "lists"
+    },
+    "quantityItems": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "totalCost": {
+      "type": "float",
+      "required": false,
+      "default": 0
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "items.items"
+    }
+  }
+}
